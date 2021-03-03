@@ -1,0 +1,16 @@
+<div class="sidenav">
+  <p-button  (click)="addNewTab('Raihan Vai')">Raihan Vai</p-button>
+  <p-button  (click)="addNewTab('Comp View')">Comp</p-button>
+  <p-button  (click)="addNewTab('Comp1 View')">Comp1</p-button>
+  <p-button  (click)="addNewTab('Comp2 View')">Comp2</p-button>
+</div>
+<div class="container-fluid">
+  <p-tabView [controlClose]="true" (onClose)="removeTab($event)" [activeIndex]= "selectedTab">
+    <p-tabPanel [header]="tab.title"  *ngFor="let tab of tabs"  [closable]="tab.close" [selected]="tab.active">
+        {{tab.title}}
+        
+    </p-tabPanel>
+</p-tabView>
+
+</div>
+
